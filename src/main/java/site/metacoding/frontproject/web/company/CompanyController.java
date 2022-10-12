@@ -63,7 +63,7 @@ public class CompanyController {
         return "company/coIntroUpdate";
     }
 
-    @PutMapping("/co/companyIntroUpdate/{introId}")
+    @PutMapping("/co/companyIntroUpdate/{introId}/update")
     public @ResponseBody CMRespDto<?> putIntroUpdate(@PathVariable Integer introId, @RequestBody UpdateDto updateDto) {
         introService.기업소개수정하기(introId, updateDto);
         return new CMRespDto<>(1, "수정성공", null);

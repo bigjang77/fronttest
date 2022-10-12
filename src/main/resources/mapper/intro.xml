@@ -23,8 +23,9 @@
 
 	<update id="update">
 		UPDATE intro 
-		SET company_id = #{companyId}, intro_birth = #{introBirth}, intro_task = #{introTask}, intro_sal = #{introSal}, intro_wellfare = #{introWellfare}, intro_location = #{introLocation}, job_id = #{jobId}, intro_image = #{introImage}
-		WHERE intro_id = {introId}
+		SET company_id = #{companyId}, intro_birth = #{introBirth}, intro_task = #{introTask}, intro_sal = #{introSal}, intro_wellfare = #{introWellfare}, intro_location = #{introLocation}, job_id = #{jobId}, intro_image = #{introImage},
+		intro_content = #{introContent}
+		WHERE intro_id = #{introId}
 	</update>
 
 	<delete id="deleteById"></delete>

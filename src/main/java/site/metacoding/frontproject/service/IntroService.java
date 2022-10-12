@@ -23,10 +23,9 @@ public class IntroService {
         return introDao.findById(intoId);
     }
 
-    public Intro 기업소개수정하기(Integer introId, UpdateDto updateDto) {
+    public void 기업소개수정하기(Integer introId, UpdateDto updateDto) {
         Intro introPS = introDao.findById(introId);
         introPS.Update(updateDto);
         introDao.update(introPS);
-        return introPS;
     }
 }
