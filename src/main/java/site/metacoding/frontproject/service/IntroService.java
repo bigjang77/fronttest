@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.frontproject.domain.intro.Intro;
 import site.metacoding.frontproject.domain.intro.IntroDao;
+import site.metacoding.frontproject.web.dto.request.intro.UpdateDto;
 
 @RequiredArgsConstructor
 @Service
@@ -18,7 +19,14 @@ public class IntroService {
         return introDao.findAll();
     }
 
-    public Intro 기업소개상세보기(Integer intoId){
+    public Intro 기업소개상세보기(Integer intoId) {
         return introDao.findById(intoId);
+    }
+
+    public Intro 기업소개수정하기(Integer introId, UpdateDto updateDto) {
+        Intro introPS = introDao.findById(introId);
+        introPS.Update(updateDto);
+        introDao.update(introPS);
+        return introPS;
     }
 }

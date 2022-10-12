@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.frontproject.domain.intro.IntroDao">
 
-	<insert id="insert">
-	</insert>
+	<insert id="insert"></insert>
 
 	<select id="findAll" resultType="site.metacoding.frontproject.domain.intro.Intro">
 		SELECT i.intro_id, row_number() over(order BY i.intro_id desc) as NO,i.company_id, i.intro_title, i.intro_task, i.intro_sal, i.intro_wellfare, i.intro_content, i.intro_sal, i.intro_wellfare,
@@ -25,12 +22,12 @@
 	</select>
 
 	<update id="update">
-
+		UPDATE intro 
+		SET company_id = #{companyId}, intro_birth = #{introBirth}, intro_task = #{introTask}, intro_sal = #{introSal}, intro_wellfare = #{introWellfare}, intro_location = #{introLocation}, job_id = #{jobId}, intro_image = #{introImage}
+		WHERE intro_id = {introId}
 	</update>
 
-	<delete id="deleteById">
-
-	</delete>
+	<delete id="deleteById"></delete>
 
 
 </mapper>

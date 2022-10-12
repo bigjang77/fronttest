@@ -3,9 +3,13 @@ package site.metacoding.frontproject.domain.intro;
 import java.util.List;
 
 public interface IntroDao {
-    public List<Intro> findAll();
+	public List<Intro> findAll();
+
 	public Intro findById(Integer introId);
+
 	public void insert(Intro intro);
-	public void update(Integer introId, Intro intro);
+
+	public void update(Intro intro);
+
 	public void deleteById(Integer introId);
 }
