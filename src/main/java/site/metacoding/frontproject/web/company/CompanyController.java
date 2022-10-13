@@ -57,15 +57,16 @@ public class CompanyController {
     // public String 마이페이지() {//기업소개 상세보기 수정하기 intro 테이블
     // return "company/coIntroUpdate";
     // }
-    @GetMapping("/co/companyIntroUpdate/{introId}")
-    public String getIntroUpdate(@PathVariable Integer introId, Model model) {
-        model.addAttribute("intro", introService.기업소개상세보기(introId));
+    @GetMapping("/co/companyIntroUpdate/{companyId}")
+    public String getIntroUpdate(@PathVariable Integer companyId, Model model) {
+        model.addAttribute("intro", introService.기업소개상세보기(companyId));
         return "company/coIntroUpdate";
     }
 
-    @PutMapping("/co/companyIntroUpdate/{introId}/update")
-    public @ResponseBody CMRespDto<?> putIntroUpdate(@PathVariable Integer introId, @RequestBody UpdateDto updateDto) {
-        introService.기업소개수정하기(introId, updateDto);
+    @PutMapping("/co/companyIntroUpdate/{companyId}/update")
+    public @ResponseBody CMRespDto<?> putIntroUpdate(@PathVariable Integer companyId,
+            @RequestBody UpdateDto updateDto) {
+        introService.기업소개수정하기(companyId, updateDto);
         return new CMRespDto<>(1, "수정성공", null);
     }
 
